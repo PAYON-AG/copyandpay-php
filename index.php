@@ -21,8 +21,7 @@ function prepareCheckout() {
 	curl_close($ch);
 	return json_decode($response)->id;
 }
-$checkoutId = prepareCheckout(); // Token to be used for building the COPYandPAY form.
-
+$checkoutId = prepareCheckout();
 ?>
 <!DOCTYPE html>
 <head>
@@ -30,6 +29,6 @@ $checkoutId = prepareCheckout(); // Token to be used for building the COPYandPAY
 	<script src="https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=<?php echo $checkoutId; ?>"></script>
 </head>
 <body>
-	<form action="http://192.168.2.109/copyandpay/php/status.php" class="paymentWidgets">VISA MASTER</form>
+	<form action="http://localhost/status.php" class="paymentWidgets">VISA MASTER</form>
 </body>
 </html>
